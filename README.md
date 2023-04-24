@@ -79,3 +79,16 @@ INNER JOIN posicao
 ORDER by jogador.datanascimento
 
 ```
+3. Exibir o nome do jogador, o seu salário, o nome do time em que joga e o nome da posição em que joga. Nomear as colunas como “Jogador”, “Salário” e “Time” e “Posição”, respectivamente. Ordenar o resultado pelo nome do time, e em seguida pelo salário, em ordem crescente.
+```sql
+
+```
+5. Exibir o nome do jogador e o nome do time em que joga. Exibir todos os jogadores, mesmo os que não possuírem time. Nomear as colunas como “Jogador” e “Time”, respectivamente.
+```sql
+
+```
+7. Exibir o nome do time e o nome do jogador pertencente a ele. Exibir todos os times, mesmo os que não possuírem jogador. Nomear as colunas como “Time” e “Jogador”, respectivamente.
+```sql
+
+```
+
