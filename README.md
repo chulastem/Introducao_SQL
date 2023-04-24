@@ -183,7 +183,12 @@ INSERT INTO PARAMETRO VALUES(0.20)
 ```
 1. Exibir o nome do empregado, o nome do departamento onde trabalha e o seu salário, mas somente dos empregados que possuem salário maior que R$ 1000,00.
 ```sql
-
+SELECT 	EMP.NOME AS "Nome"
+,		DEPT.nome as "Departamento"
+,	    EMP.salario as "Sálario"
+from EMP
+LEFT OUTER JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO
+WHERE EMP.salario > '1000'
 ```
 2. Exibir o nome do empregado, o nome e local do departamento onde trabalha. Exibir todos os departamentos, mesmo os que não possuem empregado.
 ```sql
