@@ -192,6 +192,10 @@ WHERE EMP.salario > '1000'
 ```
 2. Exibir o nome do empregado, o nome e local do departamento onde trabalha. Exibir todos os departamentos, mesmo os que não possuem empregado.
 ```sql
+SELECT 	EMP.NOME AS "Nome"
+,		DEPT.nome +' - '+DEPT.LOC AS "Departamento e local"
+from EMP
+LEFT OUTER JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO
 
 ```
 3. Exibir o nome do empregado, seu salário, e o nível de acordo com o seu salário (tabela SALGRADE).
