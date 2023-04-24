@@ -81,7 +81,27 @@ ORDER by jogador.datanascimento
 ```
 3. Exibir o nome do jogador, o seu salário, o nome do time em que joga e o nome da posição em que joga. Nomear as colunas como “Jogador”, “Salário” e “Time” e “Posição”, respectivamente. Ordenar o resultado pelo nome do time, e em seguida pelo salário, em ordem crescente.
 ```sql
+SELECT 	jogador.nome AS "Jogador"
+,		jogador.salario AS "Salário"
+,		time.nome AS "Time"
+,		posicao.nome AS	"Posição"
+FROM jogador
+INNER JOIN time
+ 	ON jogador.idTime = time.idTime
+INNER JOIN posicao
+  	ON jogador.idposicao = posicao.idPosicao
+ORDER by time.nome
 
+SELECT 	jogador.nome AS "Jogador"
+,		jogador.salario AS "Salário"
+,		time.nome AS "Time"
+,		posicao.nome AS	"Posição"
+FROM jogador
+INNER JOIN time
+ 	ON jogador.idTime = time.idTime
+INNER JOIN posicao
+  	ON jogador.idposicao = posicao.idPosicao
+ORDER by jogador.salario
 ```
 5. Exibir o nome do jogador e o nome do time em que joga. Exibir todos os jogadores, mesmo os que não possuírem time. Nomear as colunas como “Jogador” e “Time”, respectivamente.
 ```sql
