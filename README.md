@@ -103,7 +103,7 @@ INNER JOIN posicao
   	ON jogador.idposicao = posicao.idPosicao
 ORDER by jogador.salario
 ```
-5. Exibir o nome do jogador e o nome do time em que joga. Exibir todos os jogadores, mesmo os que não possuírem time. Nomear as colunas como “Jogador” e “Time”, respectivamente.
+4. Exibir o nome do jogador e o nome do time em que joga. Exibir todos os jogadores, mesmo os que não possuírem time. Nomear as colunas como “Jogador” e “Time”, respectivamente.
 ```sql
 SELECT 	jogador.nome AS "Jogador"
 ,		time.nome AS "Time"
@@ -111,7 +111,7 @@ FROM jogador
 LEFT OUTER JOIN time ON time.idtime = jogador.idTime 
 
 ```
-7. Exibir o nome do time e o nome do jogador pertencente a ele. Exibir todos os times, mesmo os que não possuírem jogador. Nomear as colunas como “Time” e “Jogador”, respectivamente.
+5. Exibir o nome do time e o nome do jogador pertencente a ele. Exibir todos os times, mesmo os que não possuírem jogador. Nomear as colunas como “Time” e “Jogador”, respectivamente.
 ```sql
 SELECT 	time.nome AS "Time"
 ,		jogador.nome as "Jogador"
