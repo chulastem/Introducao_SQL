@@ -60,3 +60,22 @@ INNER JOIN time
 	ON jogador.idtime = time.idtime
 ORDER by salario DESC
 ```
+2. Exibir o nome do jogador, a sua data de nascimento e o nome da posição em que joga. Nomear as colunas como “Jogador”, “Data de Nascimento” e “Posição”, respectivamente. Ordenar o resultado pelo nome da posição, e em seguida pela data de nascimento em ordem crescente.
+```sql
+SELECT 	jogador.nome AS "Nome"
+,		jogador.datanascimento AS "Data de nascimento"
+,		posicao.nome AS "Posição"
+FROM jogador
+INNER JOIN posicao 
+	ON jogador.idPosicao = posicao.idPosicao
+ORDER by posicao.nome
+
+SELECT 	jogador.nome AS "Nome"
+,		jogador.datanascimento AS "Data de nascimento"
+,		posicao.nome AS "Posição"
+FROM jogador
+INNER JOIN posicao 
+	ON jogador.idPosicao = posicao.idPosicao
+ORDER by jogador.datanascimento
+
+```
