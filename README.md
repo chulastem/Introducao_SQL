@@ -399,7 +399,13 @@ insert into dieta(idConsulta, idCategoriaDieta) values
 ```
 1. Exibir o nome e endereço do paciente, a data da sua consulta, e o médico que realizou a consulta.
 ```sql
-
+SELECT 	PACIENTE.nome
+,		PACIENTE.endereco
+,		consulta.datConsulta
+,  		medico.nome
+FROM paciente
+INNER JOIN consulta ON CONSULTA.idPaciente = paciente.idPaciente
+INNER JOIN medico ON MEDICO.idMedico = CONSULTA.idMedico
 ```
 2. Exibir o nome e endereço do paciente, a data da sua consulta, seu peso, sua altura, seu percentual de gordura e o valor do seu IMC (peso/altura2) calculado no dia de sua avaliação nutricional. 
 ```sql
