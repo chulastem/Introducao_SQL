@@ -409,13 +409,18 @@ INNER JOIN medico ON MEDICO.idMedico = CONSULTA.idMedico
 ```
 2. Exibir o nome e endereço do paciente, a data da sua consulta, seu peso, sua altura, seu percentual de gordura e o valor do seu IMC (peso/altura2) calculado no dia de sua avaliação nutricional. 
 ```sql
-
+SELECT 		paciente.nome
+,		paciente.endereco
+,		consulta.datConsulta
+,		avaliacaoNutricional.peso
+, 		avaliacaoNutricional.altura
+,		avaliacaoNutricional.percGordura
+,		(avaliacaoNutricional.peso/(avaliacaoNutricional.altura*avaliacaoNutricional.altura)) as "IMC"
+FROM paciente
+INNER JOIN consulta ON CONSULTA.idPaciente = paciente.idPaciente
+INNER JOIN avaliacaoNutricional on avaliacaoNutricional.idConsulta = consulta.idConsulta
 ```
-3. Exibir o nome e endereço do paciente, a data da sua consulta, o médico que realizou a consulta, bem como todos os dados das avaliações nutricionais realizadas nas consultas.
-```sql
-
-```
-4. Exibir o nome e endereço do paciente, a data da sua consulta, o médico que realizou a consulta, bem como todos os dados das dietas realizadas nas consultas
+3. Exibir o nome e endereço do paciente, a data da sua consulta, o médico que realizou a consulta, bem como todos os dados das dietas realizadas nas consultas
 ```sql
 SELECT 		PACIENTE.nome
 ,		PACIENTE.endereco
