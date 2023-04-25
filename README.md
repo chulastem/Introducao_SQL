@@ -209,6 +209,11 @@ INNER JOIN SALGRADE
 ```
 4. Exibir o nome do empregado, seu salário, bem como o nome e salário do seu gerente. Exibir todos os empregados, mesmo os que não possuem gerente.
 ```sql
-
+SELECT 		CONVERT(VARCHAR,E.EMPNO) + ' - ' + E.NOME AS "Funcionário"
+,		E.SALARIO AS "Salário"
+, 		CONVERT(VARCHAR,G.EMPNO) + ' - ' +  G.NOME AS "Gerente"
+,		G.SALARIO AS "Salário"
+FROM   EMP E
+  JOIN EMP G ON  E.GERENTE = G.EMPNO 
 ```
 
