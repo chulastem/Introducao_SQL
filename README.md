@@ -44,7 +44,7 @@ values (1, 'Everson', 150000, '01/10/1995', 1, 1)
 ```
 1. Exibir o nome do jogador, o seu salário e o nome do time em que joga. Nomear as colunas como “Jogador”, “Salário” e “Time”, respectivamente. Ordenar o resultado pelo nome do time, e em seguida pelo salário em ordem decrescente.
 ```sql select
-SELECT 	jogador.nome AS "Jogador"
+SELECT 		jogador.nome AS "Jogador"
 ,		jogador.salario AS "Salário"
 ,		time.nome As "Time"
 FROM jogador
@@ -52,7 +52,7 @@ INNER JOIN time
 	ON jogador.idtime = time.idtime
 ORDER by jogador.nome
 
-SELECT 	jogador.nome AS "Jogador"
+SELECT 		jogador.nome AS "Jogador"
 ,		jogador.salario AS "Salário"
 ,		time.nome As "Time"
 FROM jogador
@@ -62,7 +62,7 @@ ORDER by salario DESC
 ```
 2. Exibir o nome do jogador, a sua data de nascimento e o nome da posição em que joga. Nomear as colunas como “Jogador”, “Data de Nascimento” e “Posição”, respectivamente. Ordenar o resultado pelo nome da posição, e em seguida pela data de nascimento em ordem crescente.
 ```sql
-SELECT 	jogador.nome AS "Nome"
+SELECT 		jogador.nome AS "Nome"
 ,		jogador.datanascimento AS "Data de nascimento"
 ,		posicao.nome AS "Posição"
 FROM jogador
@@ -70,7 +70,7 @@ INNER JOIN posicao
 	ON jogador.idPosicao = posicao.idPosicao
 ORDER by posicao.nome
 
-SELECT 	jogador.nome AS "Nome"
+SELECT 		jogador.nome AS "Nome"
 ,		jogador.datanascimento AS "Data de nascimento"
 ,		posicao.nome AS "Posição"
 FROM jogador
@@ -81,7 +81,7 @@ ORDER by jogador.datanascimento
 ```
 3. Exibir o nome do jogador, o seu salário, o nome do time em que joga e o nome da posição em que joga. Nomear as colunas como “Jogador”, “Salário” e “Time” e “Posição”, respectivamente. Ordenar o resultado pelo nome do time, e em seguida pelo salário, em ordem crescente.
 ```sql
-SELECT 	jogador.nome AS "Jogador"
+SELECT 		jogador.nome AS "Jogador"
 ,		jogador.salario AS "Salário"
 ,		time.nome AS "Time"
 ,		posicao.nome AS	"Posição"
@@ -92,7 +92,7 @@ INNER JOIN posicao
   	ON jogador.idposicao = posicao.idPosicao
 ORDER by time.nome
 
-SELECT 	jogador.nome AS "Jogador"
+SELECT 		jogador.nome AS "Jogador"
 ,		jogador.salario AS "Salário"
 ,		time.nome AS "Time"
 ,		posicao.nome AS	"Posição"
@@ -105,7 +105,7 @@ ORDER by jogador.salario
 ```
 4. Exibir o nome do jogador e o nome do time em que joga. Exibir todos os jogadores, mesmo os que não possuírem time. Nomear as colunas como “Jogador” e “Time”, respectivamente.
 ```sql
-SELECT 	jogador.nome AS "Jogador"
+SELECT 		jogador.nome AS "Jogador"
 ,		time.nome AS "Time"
 FROM jogador
 LEFT OUTER JOIN time ON time.idtime = jogador.idTime 
@@ -113,7 +113,7 @@ LEFT OUTER JOIN time ON time.idtime = jogador.idTime
 ```
 5. Exibir o nome do time e o nome do jogador pertencente a ele. Exibir todos os times, mesmo os que não possuírem jogador. Nomear as colunas como “Time” e “Jogador”, respectivamente.
 ```sql
-SELECT 	time.nome AS "Time"
+SELECT 		time.nome AS "Time"
 ,		jogador.nome as "Jogador"
 FROM time
 LEFT OUTER JOIN jogador ON time.idtime = jogador.idtime
@@ -183,16 +183,16 @@ INSERT INTO PARAMETRO VALUES(0.20)
 ```
 1. Exibir o nome do empregado, o nome do departamento onde trabalha e o seu salário, mas somente dos empregados que possuem salário maior que R$ 1000,00.
 ```sql
-SELECT 	EMP.NOME AS "Nome"
+SELECT 		EMP.NOME AS "Nome"
 ,		DEPT.nome as "Departamento"
-,	    EMP.salario as "Sálario"
+,	   	EMP.salario as "Sálario"
 from EMP
-LEFT OUTER JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO
+	LEFT OUTER JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO
 WHERE EMP.salario > '1000'
 ```
 2. Exibir o nome do empregado, o nome e local do departamento onde trabalha. Exibir todos os departamentos, mesmo os que não possuem empregado.
 ```sql
-SELECT 	EMP.NOME AS "Nome"
+SELECT 		EMP.NOME AS "Nome"
 ,		DEPT.nome +' - '+DEPT.LOC AS "Departamento e local"
 from EMP
 LEFT OUTER JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO
@@ -200,9 +200,9 @@ LEFT OUTER JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO
 ```
 3. Exibir o nome do empregado, seu salário, e o nível de acordo com o seu salário (tabela SALGRADE).
 ```sql
-SELECT 	EMP.NOME
-,		EMP.SALARIO
-,		SALGRADE.grau
+SELECT 		EMP.NOME AS "Funcionário"
+,		EMP.SALARIO as "Salário"
+,		SALGRADE.grau AS "Grau - Salário"
 FROM EMP
 INNER JOIN SALGRADE 
 	ON (EMP.SALARIO >= SALGRADE.SALMINIMO) AND (EMP.SALARIO <= SALGRADE.SALMAXIMO)
