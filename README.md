@@ -216,4 +216,200 @@ SELECT 		CONVERT(VARCHAR,E.EMPNO) + ' - ' + E.NOME AS "Funcionário"
 FROM   EMP E
   JOIN EMP G ON  E.GERENTE = G.EMPNO 
 ```
+## Banco de Dados dbNutricao
+```sql
+create table paciente(
+	idPaciente int 
+		constraint pkPaciente primary key 
+,	nome		varchar(100) not null
+,	sexo		char not null
+,	endereco	varchar(100) not null
+,	bairro		varchar(100) not null
+,	cidade		varchar(100) not null
+,	estado		char(2) not null
+,	dataNascimento	smalldatetime not null
+,	dataInclusao		datetime default getdate()
+)	
 
+set dateformat dmy
+
+INSERT INTO paciente (idPaciente, nome, sexo, endereco, bairro, cidade, estado, dataNascimento) VALUES
+(100, 'João da Silva', 'M', 'Av. Amazonas, 100/101', 'Centro', 'Belo Horizonte', 'MG', '01-10-1973'),
+(110, 'Maria José de Souza','F',  'Rua Curitiba, 1009/102', 'Centro', 'Belo Horizonte', 'MG', '20-11-2000'),
+(120, 'Antônio Carlos Ferreira', 'M', 'Rua Piauí, 200/501', 'Funcionários', 'Belo Horizonte', 'MG', '03-11-2001'),
+(130, 'Patrícia dos Santos', 'F', 'Rua Paraíba, 300/902', 'Funcionários', 'Sete Lagoas', 'MG', '15-06-1990'),
+(140, 'Paulo Correia', 'M', 'Rua Platina, 400/1002', 'Prado', 'Sete Lagoas', 'MG', '01-01-1997'),
+(150, 'Daniela Marinho', 'F', 'Rua Joaquim Xavier, 300/902', 'Penha', 'Rio de Janeiro', 'RJ', '01-01-1994'),
+(160, 'Fabrícia Silva Passos', 'F', 'Rua Álvares Cabral, 4000/502', 'Leblon', 'Rio de Janeiro', 'RJ', '01-08-1983'),
+(170, 'Danilo Passos', 'M', 'Pça. D. Pedro I, 890/104', 'Ipanema', 'Rio de Janeiro', 'RJ', '08-05-1979'),
+(180, 'Roberto Assunção', 'M', 'Av. Tiradentes, 3500/105', 'Centro', 'São Paulo', 'SP', '03-04-2002'),
+(190, 'Sílvia Cordeiro', 'F', 'Av. Paulista, 5500/105', 'Centro', 'São Paulo', 'SP', '10-06-2001'),
+(200, 'Ricardo Andrade e Silva', 'M', 'Rua da Concórdia, 670/205', 'Centro', 'Jacareí', 'SP', '23-05-2005'),
+(210, 'Flávio Siqueira de Oliveira', 'M', 'Rua Conceição, 100', 'Jardim Paulista', 'Pindamonhangaba', 'SP', '20-10-1999'),
+(220, 'Michel Dias da Silva', 'M', 'Rua Honorina Barros, 450', 'Praia dos Corais', 'Caraguatatuba', 'SP', '20-07-2001'),
+(230, 'Maria Veríssima dos Santos', 'F', 'Rua Geraldo da Silva Teixeira, 120', 'Havaí', 'São José dos Campos', 'SP', '01-10-2002')
+
+create table medico(
+	idMedico int 
+		constraint pkMedico primary key
+,	nome	varchar(100) not null
+,	CRM		int not null	
+,	dataInclusao datetime default getdate()
+)
+
+INSERT INTO medico (idMedico, nome, CRM) VALUES
+(100, 'João Antonio de Almeida', 43253),
+(110, 'Angela Marcia da Silva', 89238),
+(120, 'Karine dos Santos', 89542),
+(130, 'Paulo José Krush', 4553),
+(140, 'Henrique Figueiredo Dias', 3213),
+(150, 'Frederico Cruzeiro de Souza', 27667),
+(160, 'Maria José Costa', 94328),
+(170, 'Fernanda Couto', 43625),
+(180, 'Artur Korth', 65748),
+(190, 'Maurício de Souza Antunes', 32553),
+(200, 'Angelica Hosken', 4553)
+
+create table consulta(
+	idConsulta	int identity
+		constraint pkConsulta primary key
+,	datConsulta		smalldatetime not null
+,	idPaciente		int not null
+		constraint fkConsulta1 foreign key
+			references paciente
+,	idMedico		int not null
+		constraint fkConsulta2 foreign key
+			references medico
+,	dataInclusao		datetime default getdate()
+)
+
+insert into consulta(datConsulta, idPaciente, idMedico) values 
+('01-06-2022 17:00:00', 100, 200),
+('01-08-2022 14:30:00', 100, 200),
+('11-11-2022 11:00:00', 100, 190),
+('05-12-2022 16:30:00', 100, 190),
+('21-07-2022 09:00:00', 110, 100),
+('01-12-2022 08:30:00', 110, 150),
+('03-01-2022 10:30:00', 110, 150),
+('01-12-2022 16:00:00', 120, 160),
+('31-01-2022 15:00:00', 120, 170),
+('01-11-2022 16:00:00', 130, 130),
+('31-12-2022 15:30:00', 130, 130),
+('01-02-2022 17:00:00', 130, 130),
+('31-01-2022 15:30:00', 140, 180),
+('06-11-2022 16:00:00', 150, 160),
+('27-12-2022 15:00:00', 150, 160),
+('12-11-2022 10:30:00', 150, 160),
+('07-10-2022 15:00:00', 160, 120),
+('01-12-2023 10:30:00', 160, 120),
+('01-09-2023 08:00:00', 170, 100),
+('02-12-2023 10:30:00', 170, 100),
+('02-10-2023 15:00:00', 210, 200),
+('03-12-2023 10:30:00', 210, 200),
+('03-07-2023 15:30:00', 220, 200),
+('03-11-2023 08:30:00', 230, 190)
+
+create table avaliacaoNutricional(
+	idAvaliacaoNutricional int identity
+		constraint pkAvaliacaoNutricional primary key
+,	idConsulta		int not null	
+		constraint fkAvaliacaoNutricional1 foreign key
+			references consulta
+,	peso			numeric(10,2)
+,	altura			numeric(10,2)
+,	percGordura		numeric(10,2)
+,	dataInclusao		datetime default getdate()
+)
+
+insert into avaliacaoNutricional(idConsulta, peso, altura, percGordura) values 
+(1, 76.5, 1.72, 10.5),
+(2, 77.3, 1.72, 12.3),
+(3, 81.4, 1.72, 14.6),
+(4, 77.0, 1.72, 10.7),
+(5, 56.5, 1.61, 11.0),
+(6, 57.3, 1.61, 12.9),
+(7, 51.4, 1.62, 9.0),
+(8, 60.0, 1.62, 10.4),
+(9, 62.9, 1.62, 13.0),
+(10, 90.0, 1.82, 25.0),
+(11, 95.5, 1.82, 27.0),
+(12, 97.0, 1.82, 28.0),
+(13, 88.5, 1.89, 27.0),
+(14, 70.0, 1.72, 17.0),
+(15, 67.5, 1.72, 15.0),
+(16, 67.9, 1.73, 15.4),
+(17, 45.1, 1.50, 6.0),
+(18, 47.8, 1.50, 7.6),
+(19, 85.1, 1.70, 17.0),
+(20, 97.6, 1.71, 21.6),
+(21, 89.1, 1.65, 26.0),
+(22, 83.8, 1.65, 23.6),
+(23, 89.1, 1.65, 26.0),
+(24, 53.8, 1.65, 13.6)
+
+create table categoriaDieta(
+	idCategoriaDieta int identity
+		constraint pkCategoriaDieta primary key
+,	nome varchar(100) not null
+,	dataInclusao	datetime default getdate()
+)
+
+insert into categoriaDieta (nome) values
+('Emagrecimento'),
+('Ganho de peso'),
+('Hipertrofia muscular'),
+('Colesterol LDL alto'),
+('Diabetes'),
+('Desintoxicação'),
+('Gestação'),
+('Intolerância a lactose')
+
+create table dieta(
+	idDieta	int identity
+		constraint pkDieta primary key
+,	idConsulta		int not null
+		constraint fkDieta1 foreign key
+			references consulta
+,	idCategoriaDieta int not null
+		constraint fkDieta2 foreign key
+			references categoriaDieta
+,	dataInclusao	datetime default getdate()
+)
+
+insert into dieta(idConsulta, idCategoriaDieta) values 
+(1, 1),
+(2, 1),
+(3, 1),
+(4, 3),
+(5, 2),
+(6, 2),
+(7, 7),
+(8, 5),
+(9, 6),
+(13, 2),
+(15, 1),
+(17, 1),
+(18, 6),
+(19, 6),
+(20, 8),
+(21, 8),
+(22, 2),
+(24, 4)
+
+```
+1. Exibir o nome e endereço do paciente, a data da sua consulta, e o médico que realizou a consulta.
+```sql
+
+```
+2. Exibir o nome e endereço do paciente, a data da sua consulta, seu peso, sua altura, seu percentual de gordura e o valor do seu IMC (peso/altura2) calculado no dia de sua avaliação nutricional. 
+```sql
+
+```
+3. Exibir o nome e endereço do paciente, a data da sua consulta, o médico que realizou a consulta, bem como todos os dados das avaliações nutricionais realizadas nas consultas.
+```sql
+
+```
+4. Exibir o nome e endereço do paciente, a data da sua consulta, o médico que realizou a consulta, bem como todos os dados das dietas realizadas nas consultas
+```sql
+
+```
