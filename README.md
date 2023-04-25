@@ -399,7 +399,7 @@ insert into dieta(idConsulta, idCategoriaDieta) values
 ```
 1. Exibir o nome e endereço do paciente, a data da sua consulta, e o médico que realizou a consulta.
 ```sql
-SELECT 	PACIENTE.nome
+SELECT 		PACIENTE.nome
 ,		PACIENTE.endereco
 ,		consulta.datConsulta
 ,  		medico.nome
