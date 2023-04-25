@@ -205,7 +205,7 @@ SELECT 	EMP.NOME
 ,		SALGRADE.grau
 FROM EMP
 INNER JOIN SALGRADE 
-	ON (EMP.SALARIO >= SALGRADE.SALMINIMO) AND (EMP.SALARIO <= salmaximo)
+	ON (EMP.SALARIO >= SALGRADE.SALMINIMO) AND (EMP.SALARIO <= SALGRADE.SALMAXIMO)
 ```
 4. Exibir o nome do empregado, seu salário, bem como o nome e salário do seu gerente. Exibir todos os empregados, mesmo os que não possuem gerente.
 ```sql
