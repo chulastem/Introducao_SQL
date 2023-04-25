@@ -200,7 +200,12 @@ LEFT OUTER JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO
 ```
 3. Exibir o nome do empregado, seu salário, e o nível de acordo com o seu salário (tabela SALGRADE).
 ```sql
-
+SELECT 	EMP.NOME
+,		EMP.SALARIO
+,		SALGRADE.grau
+FROM EMP
+INNER JOIN SALGRADE 
+	ON (EMP.SALARIO >= SALGRADE.SALMINIMO) AND (EMP.SALARIO <= salmaximo)
 ```
 4. Exibir o nome do empregado, seu salário, bem como o nome e salário do seu gerente. Exibir todos os empregados, mesmo os que não possuem gerente.
 ```sql
