@@ -1,4 +1,3 @@
-# Introducao_SQL
 # Exercícios – Exibindo dados de várias tabelas
 ## Banco de dados dbFutebol
 ```sql
