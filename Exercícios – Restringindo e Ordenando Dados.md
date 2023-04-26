@@ -1,6 +1,6 @@
-#Curso de Extensão – Introdução à Linguagem SQL
-#Exercícios – Restringindo e Ordenando Dados
-##Banco de dados dbFutebol
+# Curso de Extensão – Introdução à Linguagem SQL
+# Exercícios – Restringindo e Ordenando Dados
+## Banco de dados dbFutebol
 ```sql
 create table posicao(
 	idPosicao	int primary key 
