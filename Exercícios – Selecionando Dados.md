@@ -61,11 +61,19 @@ FROM time
 ```
 4. Exibir o nome, salário e data de nascimento de todos os jogadores, ordenados pela data de nascimento, em ordem decrescente
 ```sql
-
+SELECT 	nome
+,	salario
+,	datanascimento
+FROM jogador
+ORDER BY datanascimento DESC
 ```
 5. Exibir o nome, salário e data de nascimento de todos os jogadores, ordenados em ordem crescente pelo salário
 ```sql
-
+SELECT 	nome
+,	salario
+,	datanascimento
+FROM jogador
+ORDER BY salario
 ```
 Banco de Dados dbEmpresa
 ```sql
