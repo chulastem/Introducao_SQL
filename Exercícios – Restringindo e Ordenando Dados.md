@@ -61,6 +61,64 @@ Exibir o nome e data de nascimento dos jogadores cujo nome comece com a letra F 
 ```
 ## Banco de dados Empresa
 ```sql
+CREATE TABLE DEPT
+       (DEPTNO INT PRIMARY KEY,
+        NOME VARCHAR(100),
+        LOC VARCHAR(100) )
+
+INSERT INTO DEPT VALUES 
+ (10,'Tecnologia da Informação','New York')
+,(20,'Pesquisa','Dallas')
+,(30,'Venda','Chicago')
+,(40,'Operacional','Boston')
+
+CREATE TABLE EMP
+       (EMPNO INT NOT NULL PRIMARY KEY,
+        NOME VARCHAR(100),
+        CARGO VARCHAR(100),
+        GERENTE INT,
+        DATACONTRATACAO DATETIME,
+        SALARIO MONEY,
+        COMISSAO MONEY,
+        DEPTNO INT NULL,
+        CONSTRAINT FK_DEPT FOREIGN KEY (DEPTNO) REFERENCES DEPT (DEPTNO),
+        CONSTRAINT FK_EMP FOREIGN KEY (GERENTE) REFERENCES EMP (EMPNO))
+
+SET LANGUAGE ENGLISH
+
+INSERT INTO EMP VALUES
+         (7369,'Smith','Analista de negócios',7902,'17-DEC-15',3500,NULL,20)
+,        (7499,'Allen','Vendedor',7698,'20-FEB-16',5050.50,300,30)
+,        (7521,'Ward','Vendedor',7698,'22-FEB-15',4250.75,500,30)
+,        (7566,'Jones','Contador',7839,'2-APR-20',7600,NULL,20)
+,        (7654,'Martin','Vendedor',7698,'28-SEP-21',4250,1400,30)
+,        (7698,'Blake','Web designer',7839,'1-MAY-20',7850,NULL,10)
+,        (7782,'Clark','Analista desenvolvedor',7839,'9-JUN-19',9450,NULL,10)
+,        (7788,'Scott','Analista de negócios',7566,'09-DEC-19',5000,NULL,10)
+,        (7839,'King','Presidente',NULL,'17-JAN-17',25000,NULL,10)
+,        (7844,'Turner','Vendedor',7698,'8-SEP-20',4500,0,30)
+,        (7876,'Adams','Balconista',7788,'12-JAN-22',1100,NULL,20)
+,        (7900,'James','Balconista',7698,'3-DEC-11',1950,NULL,30)
+,        (7902,'Ford','Web designer',7566,'3-DEC-10',4800,NULL,10)
+,        (7934,'Miller','Balconista',7782,'23-JAN-12',2300,NULL,NULL)
+
+CREATE TABLE SALGRADE
+      ( GRAU INT,
+        SALMINIMO MONEY,
+        SALMAXIMO MONEY)
+
+INSERT INTO SALGRADE VALUES 
+	(1,0,2000)
+,	(2,2000,4000)
+,	(3,4000,6000)
+,	(4,6000,9000)
+,	(5,9000,99999)
+
+CREATE TABLE PARAMETRO(
+	VALDESCONTO MONEY
+)
+INSERT INTO PARAMETRO VALUES(0.20)
+
 
 ```
 1. Exibir o nome, cargo e salário dos empregados que ganham mais de R$ 2000.00. Ordenar o resultado pelo cargo em ordem crescente, e em seguida, pelo nome do empregado em ordem decrescente.
