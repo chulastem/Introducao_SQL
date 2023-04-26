@@ -54,6 +54,9 @@ FROM jogador
 ```
 3. Exibir somente o nome e estado da tabela time. Nomear a coluna estado como “Estado do Time”
 ```sql
+SELECT 		nome
+,		estado
+FROM time
 
 ```
 4. Exibir o nome, salário e data de nascimento de todos os jogadores, ordenados pela data de nascimento, em ordem decrescente
