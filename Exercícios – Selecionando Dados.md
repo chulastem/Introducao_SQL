@@ -54,8 +54,8 @@ FROM jogador
 ```
 3. Exibir somente o nome e estado da tabela time. Nomear a coluna estado como “Estado do Time”
 ```sql
-SELECT 		nome
-,		estado
+SELECT 	nome
+,	estado
 FROM time
 
 ```
