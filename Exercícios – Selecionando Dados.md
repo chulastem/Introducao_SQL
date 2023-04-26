@@ -44,11 +44,13 @@ values (1, 'Everson', 150000, '01/10/1995', 1, 1)
 ```
 1. Exibir todos os dados dos times da tabela time
 ```sql
-
+SELECT *
+FROM time
 ```
 2. Exibir todos os dados dos jogadores da tabela jogador
 ```sql
-
+SELECT *
+FROM jogador
 ```
 3. Exibir somente o nome e estado da tabela time. Nomear a coluna estado como “Estado do Time”
 ```sql
