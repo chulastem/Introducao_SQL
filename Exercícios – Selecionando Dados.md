@@ -139,15 +139,19 @@ INSERT INTO PARAMETRO VALUES(0.20)
 ```
 1. Exibir todos os dados e todas as colunas da tabela EMP.
 ```sql
-
+SELECT *
+FROM EMP
 ```
 2. Exibir todos os dados e todas as colunas da tabela DEPT.
 ```sql
-
+SELECT *
+FROM DEPT
 ```
 3. Exibir o nome dos empregados e o código dos departamentos onde os mesmos trabalham.
 ```sql
-
+SELECT 	nome AS "Funcionário"
+,	deptno AS "Código do Departamento"
+FROM EMP
 ```
 4. Exibir o código e nome de todos os departamentos da tabela DEPT.
 ```sql
