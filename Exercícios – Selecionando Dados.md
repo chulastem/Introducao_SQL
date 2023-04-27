@@ -166,7 +166,8 @@ FROM DEPT
 ```
 6. Exibir os códigos distintos dos departamentos onde os empregados trabalham.
 ```sql
-
+SELECT DISTINCT DEPTNO
+FROM DEPT
 ```
 7. Exibir o nome dos empregados, bem como o seu salário multiplicado por 12. Nomear esta última coluna como “Salário Anual”.
 ```sql
