@@ -44,15 +44,24 @@ values (1, 'Everson', 150000, '01/10/1995', 1, 1)
 ```
 1. Exibir todos os dados de todos jogadores que jogam no time de código 2 (Cruzeiro)
 ```sql
-
+SELECT *
+FROM JOGADOR
+WHERE IDTIME = '2'
 ```
 2. Exibir o nome e salário dos jogadores que jogam no time de código 1 (Atlético)
 ```sql
-
+SELECT 	NOME
+,	SALARIO
+FROM JOGADOR
+WHERE IDTIME = '1'
 ```
 3. Exibir o nome e salário dos jogadores que possuem salário menor ou igual a R$ 200.000,00. Exibir os dados por ordem decrescente do salário
 ```sql
-
+SELECT 	NOME
+,	SALARIO
+FROM JOGADOR
+WHERE SALARIO <= '200000'
+ORDER BY SALARIO DESC
 ```
 4. Exibir o nome e salário dos jogadores cujo nome comece com a letra I
 Exibir o nome e data de nascimento dos jogadores cujo nome comece com a letra F e termine com a letra o
