@@ -186,9 +186,11 @@ FROM EMP
 ```
 9. Exibir os cargos exclusivos a partir da tabela EMP
 ```sql
-
+SELECT DISTINCT	CARGO
+FROM EMP
 ```
 10. Exibir o nome do empregado concatenado com seu cargo, separado por uma vírgula e espaço. Nomear esta coluna como Empregado e Cargo.
 ```sql
-
+SELECT NOME + ', ' + CARGO AS "Empregado e Cargo"
+FROM EMP
 ```
