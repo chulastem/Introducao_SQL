@@ -178,7 +178,11 @@ FROM EMP
 ```
 8. Exibir o código dos empregados, bem como seu salário somado à sua comissão. Nomear esta última coluna como “Salário mais Comissão”
 ```sql
-
+SELECT 	EMPNO
+,	NOME
+,	SALARIO
+,	SALARIO+COMISSAO AS "Salário + comissão"
+FROM EMP
 ```
 9. Exibir os cargos exclusivos a partir da tabela EMP
 ```sql
