@@ -155,11 +155,14 @@ FROM EMP
 ```
 4. Exibir o código e nome de todos os departamentos da tabela DEPT.
 ```sql
-
+SELECT 	DEPTNO AS "Código"
+,	NOME as "Nome"
+FROM DEPT
 ```
 5. Exibir o nome dos departamentos concatenados com o seu local, separados por um espaço. Nomear esta coluna como “Nome_Local”.
 ```sql
-
+SELECT 	NOME + ' ' + LOC AS "Nome_Local"
+FROM DEPT
 ```
 6. Exibir os códigos distintos dos departamentos onde os empregados trabalham.
 ```sql
