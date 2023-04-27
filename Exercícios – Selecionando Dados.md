@@ -171,7 +171,10 @@ FROM DEPT
 ```
 7. Exibir o nome dos empregados, bem como o seu salário multiplicado por 12. Nomear esta última coluna como “Salário Anual”.
 ```sql
-
+SELECT  NOME 
+,	SALARIO	
+,	SALARIO*12 AS "Salário Anual"
+FROM EMP
 ```
 8. Exibir o código dos empregados, bem como seu salário somado à sua comissão. Nomear esta última coluna como “Salário mais Comissão”
 ```sql
