@@ -158,7 +158,11 @@ ORDER BY EMPNO, NOME
 ```
 3. Exibir o nome e cargo dos empregados que possuem salário entre R$ 1000,00 e R$ 5000,00. Ordenar o resultado pelo salário em ordem decrescente.
 ```sql
-
+SELECT	NOME 
+,	CARGO 
+FROM EMP 
+WHERE SALARIO BETWEEN '1000' AND '5000'
+ORDER BY SALARIO DESC
 ```
 4. Exibir o código, nome e o salário anual dos empregados que não possuem comissão (comissão nula). Ordenar o resultado pelo salário anual. Nomear a última coluna como "Salário Anual".
 ```sql
