@@ -225,6 +225,23 @@ from EMP
 	LEFT OUTER JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO
 WHERE EMP.salario > '1000'
 ```
+| Nome     | Departamento               | Sálario    |
+|:--------:|:--------------------------:|:----------:|
+| "Smith"  | "Pesquisa"                 | "3500"     |
+| "Allen"  | "Venda"                    | "5050.5"   |
+| "Ward"   | "Venda"                    | "4250.75"  |
+| "Jones"  | "Pesquisa"                 | "7600"     |
+| "Martin" | "Venda"                    | "4250"     |
+| "Blake"  | "Tecnologia da Informação" | "7850"     |
+| "Clark"  | "Tecnologia da Informação" | "9450"     |
+| "Scott"  | "Tecnologia da Informação" | "5000"     |
+| "King"   | "Tecnologia da Informação" | "25000"    |
+| "Turner" | "Venda"                    | "4500"     |
+| "Adams"  | "Pesquisa"                 | "1100"     |
+| "James"  | "Venda"                    | "1950"     |
+| "Ford"   | "Tecnologia da Informação" | "4800"     |
+
+
 2. Exibir o nome do empregado, o nome e local do departamento onde trabalha. Exibir todos os departamentos, mesmo os que não possuem empregado.
 ```sql
 SELECT 		EMP.NOME AS "Nome"
@@ -233,6 +250,24 @@ from EMP
 LEFT OUTER JOIN DEPT ON EMP.DEPTNO = DEPT.DEPTNO
 
 ```
+| Nome     | Departamento e local                   |
+|:--------:|:--------------------------------------:|
+| "Smith"  | "Pesquisa - Dallas"                    |
+| "Allen"  | "Venda - Chicago"                      |
+| "Ward"   | "Venda - Chicago"                      |
+| "Jones"  | "Pesquisa - Dallas"                    |
+| "Martin" | "Venda - Chicago"                      |
+| "Blake"  | "Tecnologia da Informação - New York"  |
+| "Clark"  | "Tecnologia da Informação - New York"  |
+| "Scott"  | "Tecnologia da Informação - New York"  |
+| "King"   | "Tecnologia da Informação - New York"  |
+| "Turner" | "Venda - Chicago"                      |
+| "Adams"  | "Pesquisa - Dallas"                    |
+| "James"  | "Venda - Chicago"                      |
+| "Ford"   | "Tecnologia da Informação - New York"  |
+| "Miller" | "null"                                 |
+
+
 3. Exibir o nome do empregado, seu salário, e o nível de acordo com o seu salário (tabela SALGRADE).
 ```sql
 SELECT 		EMP.NOME AS "Funcionário"
@@ -242,6 +277,20 @@ FROM EMP
 INNER JOIN SALGRADE 
 	ON (EMP.SALARIO >= SALGRADE.SALMINIMO) AND (EMP.SALARIO <= SALGRADE.SALMAXIMO)
 ```
+| Funcionário | Salário   | Grau - Salário |
+|:-----------:|:---------:|:--------------:|
+| "Adams"     | "1100"    | "1"            |
+| "James"     | "1950"    | "1"            |
+| "Smith"     | "3500"    | "2"            |
+| "Miller"    | "2300"    | "2"            |
+| "Allen"     | "5050.5"  | "3"            |
+| "Ward"      | "4250.75" | "3"            |
+| "Martin"    | "4250"    | "3"            |
+| "Scott"     | "5000"    | "3"            |
+| "Turner"    | "4500"    | "3"            |
+| "Ford"      | "4800"    | "3"            |
+| "Jones"     | "7600"    | "4"            |
+
 4. Exibir o nome do empregado, seu salário, bem como o nome e salário do seu gerente. Exibir todos os empregados, mesmo os que não possuem gerente.
 ```sql
 SELECT 		CONVERT(VARCHAR,E.EMPNO) + ' - ' + E.NOME AS "Funcionário"
@@ -251,6 +300,22 @@ SELECT 		CONVERT(VARCHAR,E.EMPNO) + ' - ' + E.NOME AS "Funcionário"
 FROM   EMP E
   JOIN EMP G ON  E.GERENTE = G.EMPNO 
 ```
+| Funcionário     | Salário   | Gerente        | Salário  |
+|:---------------:|:---------:|:--------------:|:--------:|
+| "7369 - Smith"  | "3500"    | "7902 - Ford"  | "4800"   |
+| "7499 - Allen"  | "5050.5"  | "7698 - Blake" | "7850"   |
+| "7521 - Ward"   | "4250.75" | "7698 - Blake" | "7850"   |
+| "7566 - Jones"  | "7600"    | "7839 - King"  | "25000"  |
+| "7654 - Martin" | "4250"    | "7698 - Blake" | "7850"   |
+| "7698 - Blake"  | "7850"    | "7839 - King"  | "25000"  |
+| "7782 - Clark"  | "9450"    | "7839 - King"  | "25000"  |
+| "7788 - Scott"  | "5000"    | "7566 - Jones" | "7600"   |
+| "7844 - Turner" | "4500"    | "7698 - Blake" | "7850"   |
+| "7876 - Adams"  | "1100"    | "7788 - Scott" | "5000"   |
+| "7900 - James"  | "1950"    | "7698 - Blake" | "7850"   |
+| "7902 - Ford"   | "4800"    | "7566 - Jones" | "7600"   |
+| "7934 - Miller" | "2300"    | "7782 - Clark" | "9450"   |
+
 ## Banco de Dados dbNutricao
 ```sql
 create table paciente(
