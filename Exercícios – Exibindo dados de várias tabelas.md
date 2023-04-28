@@ -447,4 +447,15 @@ INNER JOIN consulta ON CONSULTA.idPaciente = paciente.idPaciente
 INNER JOIN medico ON MEDICO.idMedico = CONSULTA.idMedico
 INNER JOIN avaliacaoNutricional ON avaliacaoNutricional.idConsulta = consulta.idConsulta
 ```
+| nome                      | endereco                 | datConsulta        | nome                          | peso    | altura | percGordura |
+|:-------------------------:|:------------------------:|:------------------:|:-----------------------------:|:-------:|:------:|:-----------:|
+| "João da Silva"           | "Av. Amazonas, 100/101"  | "2022-06-01 17:00" | "Angelica Hosken"             | "76.50" | "1.72" | "10.50"     |
+| "João da Silva"           | "Av. Amazonas, 100/101"  | "2022-08-01 14:30" | "Angelica Hosken"             | "77.30" | "1.72" | "12.30"     |
+| "João da Silva"           | "Av. Amazonas, 100/101"  | "2022-11-11 11:00" | "Maurício de Souza Antunes"   | "81.40" | "1.72" | "14.60"     |
+| "João da Silva"           | "Av. Amazonas, 100/101"  | "2022-12-05 16:30" | "Maurício de Souza Antunes"   | "77.00" | "1.72" | "10.70"     |
+| "Maria José de Souza"     | "Rua Curitiba, 1009/102" | "2022-07-21 09:00" | "João Antonio de Almeida"     | "56.50" | "1.61" | "11.00"     |
+| "Maria José de Souza"     | "Rua Curitiba, 1009/102" | "2022-12-01 08:30" | "Frederico Cruzeiro de Souza" | "57.30" | "1.61" | "12.90"     |
+| "Maria José de Souza"     | "Rua Curitiba, 1009/102" | "2022-01-03 10:30" | "Frederico Cruzeiro de Souza" | "51.40" | "1.62" | "9.00"      |
+| "Antônio Carlos Ferreira" | "Rua Piauí, 200/501"     | "2022-12-01 16:00" | "Maria José Costa"            | "60.00" | "1.62" | "10.40"     |
+| "Antônio Carlos Ferreira" | "Rua Piauí, 200/501"     | "2022-01-31 15:00" | "Fernanda Couto"              | "62.90" | "1.62" | "13.00"     |
 
