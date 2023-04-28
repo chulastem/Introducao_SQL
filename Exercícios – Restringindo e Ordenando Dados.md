@@ -374,7 +374,14 @@ ORDER BY NOME DESC
 ```
 2. Exibir o nome do paciente, seu endereço, bairro, cidade e o estado, mas somente dos pacientes dos estados do Rio de Janeiro e São Paulo. Ordenar o resultado inicialmente pelo estado, e em seguida pela cidade, ambos em ordem crescente.
 ```sql
-
+SELECT	NOME 
+,	ENDERECO 
+,	BAIRRO 
+, 	CIDADE 
+, 	ESTADO 
+FROM PACIENTE 
+WHERE ESTADO IN ('RJ','SP')
+ORDER BY ESTADO, CIDADE
 ```
 3. Exibir o nome e estado das cidades onde os pacientes moram. Não exibir resultados duplicados. Ordenar o resultado inicialmente pelo estado, e em seguida pela cidade, ambos em ordem crescente.
 ```sql
