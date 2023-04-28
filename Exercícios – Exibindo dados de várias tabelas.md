@@ -406,6 +406,19 @@ FROM paciente
 INNER JOIN consulta ON CONSULTA.idPaciente = paciente.idPaciente
 INNER JOIN medico ON MEDICO.idMedico = CONSULTA.idMedico
 ```
+| nome                      | endereco                 | datConsulta        | nome                           |
+|:-------------------------:|:------------------------:|:------------------:|:------------------------------:|
+| "João da Silva"           | "Av. Amazonas, 100/101"  | "2022-06-01 17:00" | "Angelica Hosken"              |
+| "João da Silva"           | "Av. Amazonas, 100/101"  | "2022-08-01 14:30" | "Angelica Hosken"              |
+| "João da Silva"           | "Av. Amazonas, 100/101"  | "2022-11-11 11:00" | "Maurício de Souza Antunes"    |
+| "João da Silva"           | "Av. Amazonas, 100/101"  | "2022-12-05 16:30" | "Maurício de Souza Antunes"    |
+| "Maria José de Souza"     | "Rua Curitiba, 1009/102" | "2022-07-21 09:00" | "João Antonio de Almeida"      |
+| "Maria José de Souza"     | "Rua Curitiba, 1009/102" | "2022-12-01 08:30" | "Frederico Cruzeiro de Souza"  |
+| "Maria José de Souza"     | "Rua Curitiba, 1009/102" | "2022-01-03 10:30" | "Frederico Cruzeiro de Souza"  |
+| "Antônio Carlos Ferreira" | "Rua Piauí, 200/501"     | "2022-12-01 16:00" | "Maria José Costa"             |
+| "Antônio Carlos Ferreira" | "Rua Piauí, 200/501"     | "2022-01-31 15:00" | "Fernanda Couto"               |
+
+
 2. Exibir o nome e endereço do paciente, a data da sua consulta, seu peso, sua altura, seu percentual de gordura e o valor do seu IMC (peso/altura2) calculado no dia de sua avaliação nutricional. 
 ```sql
 SELECT 		paciente.nome
