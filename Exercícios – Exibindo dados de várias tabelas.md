@@ -419,6 +419,19 @@ FROM paciente
 INNER JOIN consulta ON CONSULTA.idPaciente = paciente.idPaciente
 INNER JOIN avaliacaoNutricional on avaliacaoNutricional.idConsulta = consulta.idConsulta
 ```
+| nome                      | endereco                 | datConsulta        | peso    | altura | percGordura | IMC                            |
+|:-------------------------:|:------------------------:|:------------------:|:-------:|:------:|:-----------:|:------------------------------:|
+| "João da Silva"           | "Av. Amazonas, 100/101"  | "2022-06-01 17:00" | "76.50" | "1.72" | "10.50"     | "25.858572201189832341806381"  |
+| "João da Silva"           | "Av. Amazonas, 100/101"  | "2022-08-01 14:30" | "77.30" | "1.72" | "12.30"     | "26.128988642509464575446187"  |
+| "João da Silva"           | "Av. Amazonas, 100/101"  | "2022-11-11 11:00" | "81.40" | "1.72" | "14.60"     | "27.514872904272579772850189"  |
+| "João da Silva"           | "Av. Amazonas, 100/101"  | "2022-12-05 16:30" | "77.00" | "1.72" | "10.70"     | "26.027582477014602487831260"  |
+| "Maria José de Souza"     | "Rua Curitiba, 1009/102" | "2022-07-21 09:00" | "56.50" | "1.61" | "11.00"     | "21.796998572585934184637938"  |
+| "Maria José de Souza"     | "Rua Curitiba, 1009/102" | "2022-12-01 08:30" | "57.30" | "1.61" | "12.90"     | "22.105628640870336792562015"  |
+| "Maria José de Souza"     | "Rua Curitiba, 1009/102" | "2022-01-03 10:30" | "51.40" | "1.62" | "9.00"      | "19.585429050449626581313824"  |
+| "Antônio Carlos Ferreira" | "Rua Piauí, 200/501"     | "2022-12-01 16:00" | "60.00" | "1.62" | "10.40"     | "22.862368541380887059899405"  |
+| "Antônio Carlos Ferreira" | "Rua Piauí, 200/501"     | "2022-01-31 15:00" | "62.90" | "1.62" | "13.00"     | "23.967383020880963267794543"  |
+
+
 3. Exibir o nome e endereço do paciente, a data da sua consulta, o médico que realizou a consulta, bem como todos os dados das dietas realizadas nas consultas
 ```sql
 SELECT 		PACIENTE.nome
@@ -434,3 +447,4 @@ INNER JOIN consulta ON CONSULTA.idPaciente = paciente.idPaciente
 INNER JOIN medico ON MEDICO.idMedico = CONSULTA.idMedico
 INNER JOIN avaliacaoNutricional ON avaliacaoNutricional.idConsulta = consulta.idConsulta
 ```
+
