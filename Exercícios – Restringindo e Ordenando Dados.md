@@ -385,9 +385,17 @@ ORDER BY ESTADO, CIDADE
 ```
 3. Exibir o nome e estado das cidades onde os pacientes moram. Não exibir resultados duplicados. Ordenar o resultado inicialmente pelo estado, e em seguida pela cidade, ambos em ordem crescente.
 ```sql
-
+SELECT DISTINCT CIDADE  
+,	ESTADO 
+FROM PACIENTE 
+ORDER BY ESTADO, CIDADE
 ```
 4. Exibir o nome, cidade e endereço dos pacientes do estado de Minas Gerais. Ordenar o resultado pelo nome da cidade e em seguida pelo nome da paciente, ambos em ordem crescente.
 ```sql
-
+SELECT	NOME
+,	CIDADE 
+,	ENDERECO 
+FROM PACIENTE 
+WHERE ESTADO = 'MG'
+ORDER BY CIDADE, NOME
 ```
