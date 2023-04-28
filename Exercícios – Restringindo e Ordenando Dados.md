@@ -149,7 +149,12 @@ ORDER BY CARGO, NOME DESC
 ```
 2. Exibir o código do departamento e o nome dos empregados dos departamentos 10 e 20, que possuem o cargo de BALCONISTA. Ordenar o resultado pelo código do departamento e em seguida, pelo nome, ambos em ordem crescente.
 ```sql
-
+SELECT	DEPTNO
+,	NOME 
+FROM EMP 
+WHERE DEPTNO IN ('10','20')
+	AND CARGO = 'BALCONISTA'
+ORDER BY EMPNO, NOME     
 ```
 3. Exibir o nome e cargo dos empregados que possuem salário entre R$ 1000,00 e R$ 5000,00. Ordenar o resultado pelo salário em ordem decrescente.
 ```sql
