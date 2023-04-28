@@ -66,7 +66,15 @@ ORDER BY SALARIO DESC
 4. Exibir o nome e salário dos jogadores cujo nome comece com a letra I
 Exibir o nome e data de nascimento dos jogadores cujo nome comece com a letra F e termine com a letra o
 ```sql
+SELECT 	NOME 
+,	SALARIO 
+FROM JOGADOR 
+WHERE NOME LIKE 'I%'
 
+SELECT 	NOME 
+,	DATANASCIMENTO
+FROM JOGADOR 
+WHERE NOME LIKE 'F%' AND NOME LIKE '%O'
 ```
 ## Banco de dados Empresa
 ```sql
