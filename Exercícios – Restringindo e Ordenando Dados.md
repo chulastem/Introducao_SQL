@@ -166,11 +166,21 @@ ORDER BY SALARIO DESC
 ```
 4. Exibir o código, nome e o salário anual dos empregados que não possuem comissão (comissão nula). Ordenar o resultado pelo salário anual. Nomear a última coluna como "Salário Anual".
 ```sql
-
+SELECT	EMPNO 
+,	NOME 
+,	SALARIO*12 AS "Salário Anual" 
+FROM EMP 
+WHERE COMISSAO IS NULL
+ORDER BY SALARIO 
 ```
 5. Exibir o nome, a comissão e o cargo dos empregados cujo nome comece com a letra A e que termine com a letra S. Ordenar o resultado pelo cargo do empregado, e em seguida, pelo nome, ambos em ordem decrescente.
 ```sql
-
+SELECT	NOME 
+,	COMISSAO 
+,	CARGO 
+FROM EMP 
+WHERE NOME LIKE 'A%' AND NOME LIKE '%S'
+ORDER BY CARGO DESC, NOME DESC
 ```
 ## Banco de dados Nutrição
 ```sql
