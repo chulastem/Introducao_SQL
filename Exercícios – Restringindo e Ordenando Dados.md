@@ -140,7 +140,12 @@ INSERT INTO PARAMETRO VALUES(0.20)
 ```
 1. Exibir o nome, cargo e salário dos empregados que ganham mais de R$ 2000.00. Ordenar o resultado pelo cargo em ordem crescente, e em seguida, pelo nome do empregado em ordem decrescente.
 ```sql
-
+SELECT	NOME 
+,	CARGO 
+,	SALARIO 	
+FROM EMP 	
+WHERE SALARIO > '2000' 
+ORDER BY CARGO, NOME DESC
 ```
 2. Exibir o código do departamento e o nome dos empregados dos departamentos 10 e 20, que possuem o cargo de BALCONISTA. Ordenar o resultado pelo código do departamento e em seguida, pelo nome, ambos em ordem crescente.
 ```sql
