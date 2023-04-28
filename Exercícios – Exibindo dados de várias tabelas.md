@@ -59,6 +59,13 @@ INNER JOIN time
 	ON jogador.idtime = time.idtime
 ORDER by salario DESC
 ```
+| Jogador         | Salário     | Time        |
+|:---------------:|:-----------:|:-----------:|
+| "Edu"           | "150000.00" | "Cruzeiro"  |
+| "Everson"       | "150000.00" | "Atlético"  |
+| "Fábio"         | "100000.00" | "Cruzeiro"  |
+| "Incrível Hulk" | "850000.00" | "Atlético"  |
+
 2. Exibir o nome do jogador, a sua data de nascimento e o nome da posição em que joga. Nomear as colunas como “Jogador”, “Data de Nascimento” e “Posição”, respectivamente. Ordenar o resultado pelo nome da posição, e em seguida pela data de nascimento em ordem crescente.
 ```sql
 SELECT 		jogador.nome AS "Nome"
@@ -78,6 +85,13 @@ INNER JOIN posicao
 ORDER by jogador.datanascimento
 
 ```
+| Nome            | Data de nascimento    | Posição     |
+|:---------------:|:---------------------:|:-----------:|
+| "Incrível Hulk" | "1990-10-12 00:00:00" | "Atacante"  |
+| "Edu"           | "1983-09-10 00:00:00" | "Atacante"  |
+| "Diego Tardeli" | "1991-05-03 00:00:00" | "Atacante"  |
+| "Everson"       | "1995-10-01 00:00:00" | "Goleiro"   |
+
 3. Exibir o nome do jogador, o seu salário, o nome do time em que joga e o nome da posição em que joga. Nomear as colunas como “Jogador”, “Salário” e “Time” e “Posição”, respectivamente. Ordenar o resultado pelo nome do time, e em seguida pelo salário, em ordem crescente.
 ```sql
 SELECT 		jogador.nome AS "Jogador"
@@ -102,6 +116,13 @@ INNER JOIN posicao
   	ON jogador.idposicao = posicao.idPosicao
 ORDER by jogador.salario
 ```
+| Jogador         | Salário     | Time       | Posição     |
+|:---------------:|:-----------:|:----------:|:-----------:|
+| "Everson"       | "150000.00" | "Atlético" | "Goleiro"   |
+| "Incrível Hulk" | "850000.00" | "Atlético" | "Atacante"  |
+| "Fábio"         | "100000.00" | "Cruzeiro" | "Goleiro"   |
+| "Edu"           | "150000.00" | "Cruzeiro" | "Atacante"  |
+
 4. Exibir o nome do jogador e o nome do time em que joga. Exibir todos os jogadores, mesmo os que não possuírem time. Nomear as colunas como “Jogador” e “Time”, respectivamente.
 ```sql
 SELECT 		jogador.nome AS "Jogador"
@@ -110,6 +131,14 @@ FROM jogador
 LEFT OUTER JOIN time ON time.idtime = jogador.idTime 
 
 ```
+| Jogador         | Time        |
+|:---------------:|:-----------:|
+| "Everson"       | "Atlético"  |
+| "Incrível Hulk" | "Atlético"  |
+| "Fábio"         | "Cruzeiro"  |
+| "Edu"           | "Cruzeiro"  |
+| "Diego Tardeli" | "null"      |
+
 5. Exibir o nome do time e o nome do jogador pertencente a ele. Exibir todos os times, mesmo os que não possuírem jogador. Nomear as colunas como “Time” e “Jogador”, respectivamente.
 ```sql
 SELECT 		time.nome AS "Time"
@@ -117,6 +146,13 @@ SELECT 		time.nome AS "Time"
 FROM time
 LEFT OUTER JOIN jogador ON time.idtime = jogador.idtime
 ```
+| Jogador    | Time             |
+|:----------:|:----------------:|
+| "Atlético" | "Everson"        |
+| "Atlético" | "Incrível Hulk"  |
+| "Cruzeiro" | "Fábio"          |
+| "Cruzeiro" | "Edu"            |
+| "Flamengo" | "null"           |
 
 ## Banco de Dados dbEmpresa
 ```sql
