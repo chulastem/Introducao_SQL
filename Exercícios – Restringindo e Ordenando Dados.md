@@ -365,7 +365,12 @@ insert into dieta(idConsulta, idCategoriaDieta) values
 ```
 1. Exibir o nome do paciente, sua cidade e estado, mas somente dos pacientes que possuem "Silva" no nome. Ordenar o resultado pelo nome em ordem decrescente
 ```sql
-
+SELECT	NOME 
+,	CIDADE 	
+,	ESTADO 		
+FROM PACIENTE 
+WHERE NOME LIKE '%SILVA%'
+ORDER BY NOME DESC 
 ```
 2. Exibir o nome do paciente, seu endereço, bairro, cidade e o estado, mas somente dos pacientes dos estados do Rio de Janeiro e São Paulo. Ordenar o resultado inicialmente pelo estado, e em seguida pela cidade, ambos em ordem crescente.
 ```sql
