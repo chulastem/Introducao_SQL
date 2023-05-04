@@ -47,18 +47,37 @@ values (1, 'Everson', 150000, '01/10/1995', 1, 1)
 SELECT *
 FROM time
 ```
+| idTime | nome       | estado |
+|:------:|:----------:|:------:|
+| "1"    | "Atlético" | "MG"   |
+| "2"    | "Cruzeiro" | "MG"   |
+| "3"    | "Flamengo" | "RJ"   |
+
 2. Exibir todos os dados dos jogadores da tabela jogador
 ```sql
 SELECT *
 FROM jogador
 ```
+| idJogador | nome            | salario     | dataNascimento        | idPosicao | idTime  |
+|:---------:|:---------------:|:-----------:|:---------------------:|:---------:|:-------:|
+| "1"       | "Everson"       | "150000.00" | "1995-10-01 00:00:00" | "1"       | "1"     |
+| "2"       | "Incrível Hulk" | "850000.00" | "1990-10-12 00:00:00" | "4"       | "1"     |
+| "3"       | "Fábio"         | "100000.00" | "1982-04-11 00:00:00" | "1"       | "2"     |
+| "4"       | "Edu"           | "150000.00" | "1983-09-10 00:00:00" | "4"       | "2"     |
+| "5"       | "Diego Tardeli" | "null"      | "1991-05-03 00:00:00" | "4"       | "null"  |
+
 3. Exibir somente o nome e estado da tabela time. Nomear a coluna estado como “Estado do Time”
 ```sql
 SELECT 	nome
-,	estado
+,	estado AS 'Estado do Time'
 FROM time
-
 ```
+| nome       | Estado do Time |
+|:----------:|:--------------:|
+| "Atlético" | "MG"           |
+| "Cruzeiro" | "MG"           |
+| "Flamengo" | "RJ"           |
+
 4. Exibir o nome, salário e data de nascimento de todos os jogadores, ordenados pela data de nascimento, em ordem decrescente
 ```sql
 SELECT 	nome
@@ -67,6 +86,14 @@ SELECT 	nome
 FROM jogador
 ORDER BY datanascimento DESC
 ```
+| nome            | salario     | datanascimento         |
+|:---------------:|:-----------:|:----------------------:|
+| "Everson"       | "150000.00" | "1995-10-01 00:00:00"  |
+| "Diego Tardeli" | "null"      | "1991-05-03 00:00:00"  |
+| "Incrível Hulk" | "850000.00" | "1990-10-12 00:00:00"  |
+| "Edu"           | "150000.00" | "1983-09-10 00:00:00"  |
+| "Fábio"         | "100000.00" | "1982-04-11 00:00:00"  |
+
 5. Exibir o nome, salário e data de nascimento de todos os jogadores, ordenados em ordem crescente pelo salário
 ```sql
 SELECT 	nome
@@ -75,6 +102,14 @@ SELECT 	nome
 FROM jogador
 ORDER BY salario
 ```
+| nome            | salario     | datanascimento         |
+|:---------------:|:-----------:|:----------------------:|
+| "Diego Tardeli" | "null"      | "1991-05-03 00:00:00"  |
+| "Fábio"         | "100000.00" | "1982-04-11 00:00:00"  |
+| "Edu"           | "150000.00" | "1983-09-10 00:00:00"  |
+| "Everson"       | "150000.00" | "1995-10-01 00:00:00"  |
+| "Incrível Hulk" | "850000.00" | "1990-10-12 00:00:00"  |
+
 Banco de Dados dbEmpresa
 ```sql
 CREATE TABLE DEPT
